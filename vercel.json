@@ -1,7 +1,12 @@
 {
+  "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "sveltekit",
-  "regions": ["fra1"]
+  "regions": ["fra1"],
+  "builds": [{
+    "src": "package.json",
+    "use": "@vercel/node@18"
+  }]
 }

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "vite dev",
@@ -22,8 +22,5 @@
   "dependencies": {
     "openai": "^4.24.1",
     "sveltestrap": "^5.11.2"
-  },
-  "peerDependencies": {
-    "svelte": "^3.59.2"
   }
 }
