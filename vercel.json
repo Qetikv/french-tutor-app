@@ -3,11 +3,5 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "sveltekit",
-  "outputDirectory": ".svelte-kit",
-  "regions": ["fra1"],
-  "functions": {
-    "api/*": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "regions": ["fra1"]
 }

@@ -6,10 +6,7 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter({
-      runtime: 'nodejs18.x',
-      regions: ['fra1']
-    })
+    adapter: adapter()
   }
 };
 
