@@ -4,8 +4,5 @@
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "sveltekit",
   "outputDirectory": ".svelte-kit",
-  "regions": ["fra1"],
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key"
-  }
+  "regions": ["fra1"]
 }
