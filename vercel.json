@@ -6,6 +6,6 @@
   "outputDirectory": ".svelte-kit",
   "regions": ["fra1"],
   "env": {
-    "OPENAI_API_KEY": "@openai-api-key"
+    "OPENAI_API_KEY": "@openai_api_key"
   }
 }
