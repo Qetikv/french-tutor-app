@@ -16,12 +16,18 @@
     "@sveltejs/adapter-vercel": "^4.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "svelte": "^4.2.7",
+    "svelte": "~3.59.2",
     "vite": "^5.0.3"
   },
   "type": "module",
   "dependencies": {
     "openai": "^4.24.1",
     "sveltestrap": "^5.11.2"
+  },
+  "resolutions": {
+    "svelte": "~3.59.2"
+  },
+  "overrides": {
+    "svelte": "~3.59.2"
   }
 }
