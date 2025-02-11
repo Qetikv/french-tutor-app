@@ -116,44 +116,45 @@
             <span class="flag">🇫🇷</span> French Language Tutor
           </CardTitle>
           
-          <Nav tabs class="custom-tabs">
-            <NavItem>
-              <NavLink 
-                active={activeTab === 'practice'} 
+          <div class="mode-selector">
+            <div class="mode-cards">
+              <div
+                class="mode-card {activeTab === 'practice' ? 'active' : ''}"
                 on:click={() => setActiveTab('practice')}
-                class="tab-link"
               >
-                🎯 Practice Chat
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink 
-                active={activeTab === 'grammar'} 
+                <div class="mode-icon">🎯</div>
+                <div class="mode-title">Practice Chat</div>
+                <div class="mode-description">Interactive conversations to practice French</div>
+              </div>
+              
+              <div
+                class="mode-card {activeTab === 'grammar' ? 'active' : ''}"
                 on:click={() => setActiveTab('grammar')}
-                class="tab-link"
               >
-                ✍️ Grammar Check
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink 
-                active={activeTab === 'vocabulary'} 
+                <div class="mode-icon">✍️</div>
+                <div class="mode-title">Grammar Check</div>
+                <div class="mode-description">Get instant grammar feedback</div>
+              </div>
+              
+              <div
+                class="mode-card {activeTab === 'vocabulary' ? 'active' : ''}"
                 on:click={() => setActiveTab('vocabulary')}
-                class="tab-link"
               >
-                📚 Word Explorer
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink 
-                active={activeTab === 'chat'} 
+                <div class="mode-icon">📚</div>
+                <div class="mode-title">Word Explorer</div>
+                <div class="mode-description">Learn new words and phrases</div>
+              </div>
+              
+              <div
+                class="mode-card {activeTab === 'chat' ? 'active' : ''}"
                 on:click={() => setActiveTab('chat')}
-                class="tab-link"
               >
-                💡 French Tips
-              </NavLink>
-            </NavItem>
-          </Nav>
+                <div class="mode-icon">💡</div>
+                <div class="mode-title">French Tips</div>
+                <div class="mode-description">Cultural insights and tips</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="chat-container mb-3">
@@ -384,34 +385,64 @@
     transform-origin: 70% 70%;
   }
 
-  .custom-tabs {
-    justify-content: center;
-    border: none !important;
+  .mode-selector {
     margin-bottom: 2rem;
-    gap: 0.5rem;
   }
 
-  :global(.tab-link) {
-    color: #4a5568 !important;
-    border: none !important;
-    border-radius: 12px !important;
-    margin: 0 0.25rem;
-    padding: 0.75rem 1.25rem !important;
+  .mode-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .mode-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    text-align: center;
   }
 
-  :global(.tab-link:hover) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  .mode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
   }
 
-  :global(.tab-link.active) {
-    background: linear-gradient(135deg, #BB4E75, #6B4E8B) !important;
-    color: white !important;
-    box-shadow: 0 4px 15px rgba(187, 78, 117, 0.3);
+  .mode-card.active {
+    border-color: #BB4E75;
+    background: linear-gradient(135deg, rgba(187, 78, 117, 0.1), rgba(107, 78, 139, 0.1));
+    box-shadow: 0 8px 20px rgba(187, 78, 117, 0.2);
+  }
+
+  .mode-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  .mode-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #BB4E75, #6B4E8B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .mode-description {
+    font-size: 0.9rem;
+    color: #4a5568;
+    opacity: 0.8;
+  }
+
+  .mode-card.active .mode-description {
+    color: #2d3748;
+    opacity: 1;
   }
 
   .assistant {
